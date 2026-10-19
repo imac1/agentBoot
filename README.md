@@ -2,7 +2,7 @@
 
 A small coding agent in Python that receives a task and let it work through the code.
 
-Following along with [Boot.dev course](hhttps://www.boot.dev/courses/build-ai-agent-python).
+Following along with [Boot.dev course](https://www.boot.dev/courses/build-ai-agent-python).
 
 Here's how it works:
 
