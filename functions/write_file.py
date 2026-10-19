@@ -1,21 +1,23 @@
 import os
 
+
 def write_file(working_directory: str, file_path: str, content: str) -> str:
     try:
         working_dir = os.path.abspath(working_directory)
         target_dir = os.path.normpath(os.path.join(working_dir, file_path))
-        existing_dir  = os.path.isdir(target_dir)
-        valid_target_dir = os.path.commonpath([os.path.realpath(working_dir),
-    os.path.realpath(target_dir)]) == os.path.realpath(working_dir)
+        existing_dir = os.path.isdir(target_dir)
+        valid_target_dir = os.path.commonpath(
+            [os.path.realpath(working_dir), os.path.realpath(target_dir)]
+        ) == os.path.realpath(working_dir)
         if not valid_target_dir:
             return f'Error: Cannot write to "{file_path}" as it is outside the permitted working directory'
         elif existing_dir:
             return f'Error: Cannot write to "{file_path}" as it is a directory'
         else:
             os.makedirs(os.path.dirname(target_dir), exist_ok=True)
-            with open(target_dir, 'w') as f:
+            with open(target_dir, "w") as f:
                 f.write(content)
                 return f'Successfully wrote to "{file_path}" ({len(content)} characters written)'
 
     except Exception as e:
-        return f'Error: {e}'
+        return f"Error: {e}"

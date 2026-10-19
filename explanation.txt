@@ -1,0 +1,9 @@
+Funcție	Întrebarea la care răspunde
+join()	Cum lipesc două bucăți de adresă?
+abspath()	Care este adresa completă?
+normpath()	Cum simplific adresa?
+realpath()	Unde duce adresa în realitate?
+commonpath()	Ce drum au în comun două adrese?
+isfile()	Este un fișier?
+isdir()	Este un folder?
+exists()	Există ceva la adresa aceasta?
